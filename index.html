@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>kalkulator</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="empty">
+            <p>infantry</p>
+            <div id="infantryPlayert1Stats"></div>
+            <div id="infantryPlayert2Stats"></div>
+            <div id="infantryPlayert3Stats"></div>
+            <div id="infantryPlayert4Stats"></div>
+            <div id="infantryPlayert5Stats"></div>
+            <p>cavalry</p>
+            <div id="cavalryPlayert1Stats"></div>
+            <div id="cavalryPlayert2Stats"></div>
+            <div id="cavalryPlayert3Stats"></div>
+            <div id="cavalryPlayert4Stats"></div>
+            <div id="cavalryPlayert5Stats"></div>
+            <p>archers</p>
+            <div id="archersPlayert1Stats"></div>
+            <div id="archersPlayert2Stats"></div>
+            <div id="archersPlayert3Stats"></div>
+            <div id="archersPlayert4Stats"></div>
+            <div id="archersPlayert5Stats"></div>
+            <p>sieges</p>
+            <div id="siegePlayert1Stats"></div>
+            <div id="siegePlayert2Stats"></div>
+            <div id="siegePlayert3Stats"></div>
+            <div id="siegePlayert4Stats"></div>
+            <div id="siegePlayert5Stats"></div>
+        </div> 
+
+        <div id="kol1">
+                <p>PLAYER</p>
+                <div class="wrapperInside2">
+                        <div id="inside2kol1">
+                                <div class="civ">
+                                        <p>Choose civ</p>
+                                        <select name="civs" id="civsPlayer" onclick="displayCivPLayer()">
+                                            <option value="Arabia">Arabia</option>
+                                            <option value="Britain" selected="selected">Britain</option>
+                                            <option value="Byzantium">Byzantium</option>
+                                            <option value="China">China</option>
+                                            <option value="France">France</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="Korea">Korea</option>
+                                            <option value="Ottoman">Ottoman</option>
+                                            <option value="Rome">Rome</option>                        
+                                            <option value="Spain">Spain</option>
+                                        </select>
+                                    </div>
+                        </div>
+                        <div id="inside2kol2">
+                                <div class="civ">
+                                        <p>Choose commander</p>
+                                        <select name="civs" id="civsEnemy" onclick="displayCivEnemy()">
+                                            <option value="Arabia">1</option>
+                                            <option value="Britain">2</option>
+                                            <option value="Byzantium">3</option>
+                                            <option value="China">4</option>
+                                            <option value="France">5</option>
+                                            <option value="Germany">6</option>
+                                            <option value="Japan">7</option>
+                                            <option value="Korea">8</option>
+                                            <option value="Ottoman">9</option>
+                                            <option value="Rome">10</option>                        
+                                            <option value="Spain">11</option>
+                                        </select>
+                                    </div>
+                        </div>
+                    </div>
+
+           
+            <div class="troops">
+                <p>TROOPS</p>
+                <p>Infantry</p>
+                T1: <input type="number" id="infantryPlayert1" placeholder="infantry t1" name="infantryPlayert1" value="0"></br>
+                T2: <input type="number" id="infantryPlayert2" placeholder="infantry t2" name="infantryPlayert2" value="0"></br>
+                T3: <input type="number" id="infantryPlayert3" placeholder="infantry t3" name="infantryPlayert3" value="0"></br>
+                T4: <input type="number" id="infantryPlayert4" placeholder="infantry t4" name="infantryPlayert4" value="0"></br>
+                T5: <input type="number" id="infantryPlayert5" placeholder="infantry t5" name="infantryPlayert5" value="0"></br>
+                <p>Cavalry</p>
+                T1: <input type="number" id="cavalryPlayert1" placeholder="cavalry t1" name="cavalryPlayert1" value="0"></br>
+                T2: <input type="number" id="cavalryPlayert2" placeholder="cavalry t2" name="cavalryPlayert2" value="0"></br>
+                T3: <input type="number" id="cavalryPlayert3" placeholder="cavalry t3" name="cavalryPlayert3" value="0"></br>
+                T4: <input type="number" id="cavalryPlayert4" placeholder="cavalry t4" name="cavalryPlayert4" value="0"></br>
+                T5: <input type="number" id="cavalryPlayert5" placeholder="cavalry t5" name="cavalryPlayert5" value="0"></br>
+                <p>Archers</p>
+                T1:<input type="number" id="archersPlayert1" placeholder="archers t1" name="archersPlayert1" value="0"></br>
+                T2:<input type="number" id="archersPlayert2" placeholder="archers t2" name="archersPlayert2" value="0"></br>
+                T3:<input type="number" id="archersPlayert3" placeholder="archers t3" name="archersPlayert3" value="0"></br>
+                T4:<input type="number" id="archersPlayert4" placeholder="archers t4" name="archersPlayert4" value="0"></br>
+                T5:<input type="number" id="archersPlayert5" placeholder="archers t5" name="archersPlayert5" value="0"></br>
+                <p>Siege</p>
+                T1:<input type="number" id="siegePlayert1" placeholder="siege t1" name="siegePlayert1" value="0"></br>
+                T2:<input type="number" id="siegePlayert2" placeholder="siege t2" name="siegePlayert2" value="0"></br>
+                T3:<input type="number" id="siegePlayert3" placeholder="siege t3" name="siegePlayert2" value="0"></br>
+                T4:<input type="number" id="siegePlayert4" placeholder="siege t3" name="siegePlayert3" value="0"></br>
+                T5:<input type="number" id="siegePlayert5" placeholder="siege t4" name="siegePlayert4" value="0"></br>
+            </div>
+        </div>
+
+        <div id="kol3">
+                <p>RESULT</p>
+            <div id="przycisk" >
+                <input type="button" value="Count">
+            </div>
+            
+            <input type="number" id="battleResult" name="battleResult">
+            <div id="battleResultEnd">
+
+            </div>
+        </div>
+
+        <div id="kol2">
+                <p>ENEMY</p>
+            <div class="wrapperInside2">
+                <div id="inside2kol1">
+                        <div class="civ">
+                                <p>Choose civ</p>
+                                <select name="civs" id="civsEnemy" onclick="displayCivEnemy()">
+                                    <option value="Arabia">Arabia</option>
+                                    <option value="Britain">Britain</option>
+                                    <option value="Byzantium">Byzantium</option>
+                                    <option value="China">China</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Korea">Korea</option>
+                                    <option value="Ottoman">Ottoman</option>
+                                    <option value="Rome">Rome</option>                        
+                                    <option value="Spain">Spain</option>
+                                </select>
+                            </div>
+                </div>
+                <div id="inside2kol2">
+                        <div class="civ">
+                                <p>Choose commander</p>
+                                <select name="civs" id="civsEnemy" onclick="displayCivEnemy()">
+                                    <option value="Arabia">1</option>
+                                    <option value="Britain">2</option>
+                                    <option value="Byzantium">3</option>
+                                    <option value="China">4</option>
+                                    <option value="France">5</option>
+                                    <option value="Germany">6</option>
+                                    <option value="Japan">7</option>
+                                    <option value="Korea">8</option>
+                                    <option value="Ottoman">9</option>
+                                    <option value="Rome">10</option>                        
+                                    <option value="Spain">11</option>
+                                </select>
+                            </div>
+                </div>
+            </div>
+                
+                
+                <div class="troops">
+                    <p>TROOPS</p>
+                    <p>Infantry</p>
+                    T1: <input type="number" id="infantryEnemyt1" placeholder="infantry t1" name="infantryEnemyt1" value="0"></br>
+                    T2: <input type="number" id="infantryEnemyt2" placeholder="infantry t2" name="infantryEnemyt2" value="0"></br>
+                    T3: <input type="number" id="infantryEnemyt3" placeholder="infantry t3" name="infantryEnemyt3" value="0"></br>
+                    T4: <input type="number" id="infantryEnemyt4" placeholder="infantry t4" name="infantryEnemyt4" value="0"></br>
+                    T5: <input type="number" id="infantryEnemyt5" placeholder="infantry t5" name="infantryEnemyt5" value="0"></br>
+                    <p>Cavalry</p>
+                    T1: <input type="number" id="cavalryEnemyt1" placeholder="cavalry t1" name="cavalryEnemyt1" value="0"></br>
+                    T2: <input type="number" id="cavalryEnemyt2" placeholder="cavalry t2" name="cavalryEnemyt2" value="0"></br>
+                    T3: <input type="number" id="cavalryEnemyt3" placeholder="cavalry t3" name="cavalryEnemyt3" value="0"></br>
+                    T4: <input type="number" id="cavalryEnemyt4" placeholder="cavalry t4" name="cavalryEnemyt4" value="0"></br>
+                    T5: <input type="number" id="cavalryEnemyt5" placeholder="cavalry t5" name="cavalryEnemyt5" value="0"></br>
+                    <p>Archers</p>
+                    T1: <input type="number" id="archersEnemyt1" placeholder="archers t1" name="archersEnemyt1" value="0"></br>
+                    T2: <input type="number" id="archersEnemyt2" placeholder="archers t2" name="archersEnemyt2" value="0"></br>
+                    T3: <input type="number" id="archersEnemyt3" placeholder="archers t3" name="archersEnemyt3" value="0"></br>
+                    T4: <input type="number" id="archersEnemyt4" placeholder="archers t4" name="archersEnemyt4" value="0"></br>
+                    T5: <input type="number" id="archersEnemyt5" placeholder="archers t5" name="archersEnemyt5" value="0"></br>
+                    <p>Siege</p>
+                    T1: <input type="number" id="siegeEnemyt1" placeholder="siege t1" name="siegeEnemyt1" value="0"></br>
+                    T2: <input type="number" id="siegeEnemyt2" placeholder="siege t2" name="siegeEnemyt2" value="0"></br>
+                    T3: <input type="number" id="siegeEnemyt3" placeholder="siege t3" name="siegeEnemyt3" value="0"></br>
+                    T4: <input type="number" id="siegeEnemyt4" placeholder="siege t3" name="siegeEnemyt4" value="0"></br>
+                    T5: <input type="number" id="siegeEnemyt5" placeholder="siege t4" name="siegeEnemyt5" value="0"></br>
+                </div>
+            </div>
+        <div class="empty">
+            <p>infantry</p>
+            <div id="infantryEnemyt1Stats"></div>
+            <div id="infantryEnemyt2Stats"></div>
+            <div id="infantryEnemyt3Stats"></div>
+            <div id="infantryEnemyt4Stats"></div>
+            <div id="infantryEnemyt5Stats"></div>
+            <p>cavalry</p>
+            <div id="cavalryEnemyt1Stats"></div>
+            <div id="cavalryEnemyt2Stats"></div>
+            <div id="cavalryEnemyt3Stats"></div>
+            <div id="cavalryEnemyt4Stats"></div>
+            <div id="cavalryEnemyt5Stats"></div>
+            <p>archers</p>
+            <div id="archersEnemyt1Stats"></div>
+            <div id="archersEnemyt2Stats"></div>
+            <div id="archersEnemyt3Stats"></div>
+            <div id="archersEnemyt4Stats"></div>
+            <div id="archersEnemyt5Stats"></div>
+            <p>sieges</p>
+            <div id="siegeEnemyt1Stats"></div>
+            <div id="siegeEnemyt2Stats"></div>   
+            <div id="siegeEnemyt3Stats"></div> 
+            <div id="siegeEnemyt4Stats"></div> 
+            <div id="siegeEnemyt5Stats"></div>        
+        </div> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
