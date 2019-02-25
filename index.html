@@ -43,8 +43,8 @@
                         <div id="inside2kol1">
                                 <div class="civ">
                                         <p>Choose civ</p>
-                                        <select name="civs" id="civsPlayer" onclick="displayCivPlayer()">
-                                            <option value="Arabia">Arabia</option>
+                                        <select name="civs" id="civsPlayer" onclick="displayCivPLayer()">
+                                            <option value="Arabia" selected="selected">Arabia</option>
                                             <option value="Britain">Britain</option>
                                             <option value="Byzantium">Byzantium</option>
                                             <option value="China">China</option>
@@ -56,28 +56,53 @@
                                             <option value="Rome">Rome</option>                        
                                             <option value="Spain">Spain</option>
                                         </select>
-                                    </div>
+                                </div>
+                        </div>
+                        <div id="inside2kol1"></div>
+                        <div id="inside2kol1"></div>
+                        
+                        <div id="inside2kol2">
+                            <div class="civ">
+                                    <p>Commander</p>
+                                    <select name="commanders" id="commandersPlayer" onclick="displayCommandersPlayer()">
+                                        <option value="CaoCao" selected="selected">Cao Cao</option>
+                                        <option value="CharlesMartel">Charles Martel</option>
+                                        <option value="Cleopatra">Cleopatra VII</option>
+                                        <option value="Constantine">Constantine I</option>
+                                        <option value="ElCid">El Cid</option>
+                                        <option value="Frederick">Frederick I</option>
+                                        <option value="HannibalBarca">Hannibal Barca</option>
+                                        <option value="JuliusCaesar">Julius Caesar</option>
+                                        <option value="Mehmed">Mehmed II</option>
+                                        <option value="Minamoto">Minamoto</option>                        
+                                        <option value="Richard">Richard I</option>
+                                        <option value="Saladin">Saladin</option>
+                                        <option value="YiSeong-Gye">Yi Seong-Gye</option>
+                                    </select>
+                                </div>
                         </div>
                         <div id="inside2kol2">
                                 <div class="civ">
-                                        <p>Choose commander</p>
-                                        <select name="commanders" id="commandersPlayer" onclick="displayCommandersPlayer()">
-                                            <option value="CaoCao">Cao Cao</option>
-                                            <option value="CharlesMartel" selected="selected">Charles Martel</option>
-                                            <option value="Cleopatra">Cleopatra VII</option>
-                                            <option value="Constantine">Constantine I</option>
-                                            <option value="ElCid">El Cid</option>
-                                            <option value="Frederick">Frederick I</option>
-                                            <option value="HannibalBarca">Hannibal Barca</option>
-                                            <option value="JuliusCaesar">Julius Caesar</option>
-                                            <option value="Mehmed">Mehmed II</option>
-                                            <option value="Minamoto">Minamoto</option>                        
-                                            <option value="Richard">Richard I</option>
-                                            <option value="Saladin">Saladin</option>
-                                            <option value="YiSeong-Gye">Yi Seong-Gye</option>
+                                        <p>Stars level</p>
+                                        <select name="commanders" id="commandersPlayer" onclick="displayStarsPlayer()">
+                                            <option value="1" selected="selected">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
                                         </select>
                                     </div>
                         </div>
+                        <div id="inside2kol2">
+                            <div class="civ">
+                                    <p>Level</p>
+                                    <select name="levelsCommanderPlayer" id="levelsCommanderPlayer" onclick="levelsCommanderPlayer()">
+                                        <option value='1' selected="selected">1</option>
+                                    </select>
+                            </div>
+                        </div>
+                        
                     </div>
 
            
@@ -143,9 +168,11 @@
                                 </select>
                             </div>
                 </div>
+                <div id="inside2kol2"></div>
+                <div id="inside2kol2"></div>
                 <div id="inside2kol2">
                         <div class="civ">
-                                <p>Choose commander</p>
+                                <p>Commander</p>
                                 <select name="commanders" id="commandersEnemy" onclick="displayCommandersEnemy()">
                                     <option value="CaoCao">Cao Cao</option>
                                     <option value="CharlesMartel" selected="selected">Charles Martel</option>
@@ -162,6 +189,27 @@
                                     <option value="YiSeong-Gye">Yi Seong-Gye</option>
                                 </select>
                             </div>
+                </div>
+                <div id="inside2kol2">
+                    <div class="civ">
+                            <p>Stars level</p>
+                            <select name="commanders" id="commandersEnemy" onclick="displayStarsEnemy()">
+                                <option value="1" selected="selected">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                </div>
+                <div id="inside2kol2">
+                    <div class="civ">
+                            <p>Level</p>
+                            <select name="levelsCommanderPlayer" id="levelsCommanderEnemy" onclick="levelsCommanderEnemy()">
+                                <option value='1' selected="selected">1</option>
+                            </select>
+                    </div>
                 </div>
             </div>
                 

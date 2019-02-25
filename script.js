@@ -1,3 +1,5 @@
+levelsCommanderPlayer()
+
 // DATA //
 
 const Arabia = {
@@ -26,22 +28,22 @@ const Arabia = {
     },
     cavalry: {
         t1: {
-            att:62*1.05,
+            att:(62*1.05).toFixed(2),
             def:120,
             hp:120   
         },
         t2: {
-            att:128*1.05,
+            att:128*1.05.toFixed(2),
             def:125,
             hp:125
         },
         t3: {
-            att:163*1.05,
+            att:163*1.05.toFixed(2),
             def:158,
             hp:155
         },
         t4: {
-            att:192*1.05,
+            att:(192*1.05).toFixed(2),
             def:192,
             hp:197
         }
@@ -139,22 +141,22 @@ const Britain = {
     },
     archers: {
         t1: {
-            att:62*1.05,
+            att:(62*1.05).toFixed(2),
             def:120,
             hp:120   
         },
         t2: {
-            att:125*1.05,
+            att:(125*1.05).toFixed(2),
             def:128,
             hp:128
         },
         t3: {
-            att:158*1.05,
+            att:(158*1.05).toFixed(2),
             def:155,
             hp:163
         },
         t4: {
-            att:202*1.05,
+            att:(202*1.05).toFixed(2),
             def:192,
             hp:187
         }
@@ -210,22 +212,22 @@ const Byzantium = {
         t1: {
             att:62,
             def:120,
-            hp:120*1.05   
+            hp:(120*1.05).toFixed(2)   
         },
         t2: {
             att:128,
             def:125,
-            hp:125*1.05 
+            hp:(125*1.05).toFixed(2) 
         },
         t3: {
             att:163,
             def:158,
-            hp:155*1.05 
+            hp:(155*1.05).toFixed(2) 
         },
         t4: {
             att:187,
             def:202,
-            hp:192*1.05
+            hp:(192*1.05).toFixed(2)
         }
     },
     archers: {
@@ -278,22 +280,22 @@ const China = {
     infantry: {
         t1: {
             att:62,
-            def:120*1.03,
+            def:(120*1.03).toFixed(2),
             hp:120   
         },
         t2: {
             att:128,
-            def:125*1.03,
+            def:(125*1.03).toFixed(2),
             hp:125
         },
         t3: {
             att:163,
-            def:158*1.03,
+            def:(158*1.03).toFixed(2),
             hp:155
         },
         t4: {
             att:197,
-            def:197*1.03,
+            def:(197*1.03).toFixed(2),
             hp:187
         }
     },
@@ -370,22 +372,22 @@ const France = {
         t1: {
             att:62,
             def:120,
-            hp:120*1.03   
+            hp:(120*1.03).toFixed(2)   
         },
         t2: {
             att:128,
             def:125,
-            hp:125*1.03  
+            hp:(125*1.03).toFixed(2)  
         },
         t3: {
             att:163,
             def:158,
-            hp:155*1.03  
+            hp:(155*1.03).toFixed(2)  
         },
         t4: {
             att:192,
             def:192,
-            hp:197*1.03
+            hp:(197*1.03).toFixed(2)
         }
     },
     cavalry: {
@@ -481,22 +483,22 @@ const Germany = {
     },
     cavalry: {
         t1: {
-            att:62*1.05,
+            att:(62*1.05).toFixed(2),
             def:120,
             hp:120   
         },
         t2: {
-            att:128*1.05,
+            att:(128*1.05).toFixed(2),
             def:125,
             hp:125
         },
         t3: {
-            att:163*1.05,
+            att:(163*1.05).toFixed(2),
             def:158,
             hp:155
         },
         t4: {
-            att:187*1.05,
+            att:(187*1.05).toFixed(2),
             def:192,
             hp:192
         }
@@ -550,22 +552,22 @@ const Japan = {
     name: "Japan",
     infantry: {
         t1: {
-            att:62*1.03,
+            att:(62*1.03).toFixed(2),
             def:120,
             hp:120   
         },
         t2: {
-            att:128*1.03,
+            att:(128*1.03).toFixed(2),
             def:125,
             hp:125
         },
         t3: {
-            att:163*1.03,
+            att:(163*1.03).toFixed(2),
             def:158,
             hp:155
         },
         t4: {
-            att:202*1.03,
+            att:(202*1.03).toFixed(2),
             def:192,
             hp:187
         }
@@ -686,22 +688,22 @@ const Korea = {
     archers: {
         t1: {
             att:62,
-            def:120*1.05,
+            def:(120*1.05).toFixed(2),
             hp:120   
         },
         t2: {
             att:125,
-            def:128*1.05,
+            def:(128*1.05).toFixed(2),
             hp:128
         },
         t3: {
             att:158,
-            def:155*1.05,
+            def:(155*1.05).toFixed(2),
             hp:163
         },
         t4: {
             att:192,
-            def:202*1.05,
+            def:(202*1.05).toFixed(2),
             hp:187
         }
     },
@@ -778,22 +780,22 @@ const Ottoman = {
         t1: {
             att:62,
             def:120,
-            hp:120*1.05   
+            hp:(120*1.05).toFixed(2)  
         },
         t2: {
             att:125,
             def:128,
-            hp:128*1.05  
+            hp:(128*1.05).toFixed(2)  
         },
         t3: {
             att:158,
             def:155,
-            hp:163*1.05  
+            hp:(163*1.05).toFixed(2)  
         },
         t4: {
             att:197,
             def:192,
-            hp:192*1.05
+            hp:(192*1.05).toFixed(2)
         }
     },
     sieges: {
@@ -824,22 +826,22 @@ const Rome = {
     infantry: {
         t1: {
             att:62,
-            def:120*1.05,
+            def:(120*1.05).toFixed(2),
             hp:120   
         },
         t2: {
             att:128,
-            def:125*1.05,
+            def:(125*1.05).toFixed(2),
             hp:125
         },
         t3: {
             att:163,
-            def:158*1.05,
+            def:(158*1.05).toFixed(2),
             hp:155
         },
         t4: {
             att:192,
-            def:202*1.05,
+            def:(202*1.05).toFixed(2),
             hp:187
         }
     },
@@ -937,22 +939,22 @@ const Spain = {
     cavalry: {
         t1: {
             att:62,
-            def:120*1.05,
+            def:(120*1.05).toFixed(2),
             hp:120   
         },
         t2: {
             att:128,
-            def:125*1.05,
+            def:(125*1.05).toFixed(2),
             hp:125
         },
         t3: {
             att:163,
-            def:158*1.05,
+            def:(158*1.05).toFixed(2),
             hp:155
         },
         t4: {
             att:192,
-            def:192*1.05,
+            def:(192*1.05).toFixed(2),
             hp:192
         }
     },
@@ -1142,6 +1144,28 @@ function displayCivEnemy(){
         default:
             console.log("brak")
       }
+}
+
+function levelsCommanderPlayer(){
+    for (var i = 2; i <= 60; i++) {
+        g = document.createElement('option');
+        g.text = i;
+        g.value = i;
+    
+        element = document.getElementById("levelsCommanderPlayer");
+        element.appendChild(g)
+    }
+}
+
+function levelsCommanderEnemy(){
+    for (var i = 1; i <= 60; i++) {
+        g = document.createElement('option');
+        g.text = i;
+        g.value = i;
+    
+        element = document.getElementById("levelsCommanderEnemy");
+        element.appendChild(g)
+    }
 }
 
 // border stats Player 

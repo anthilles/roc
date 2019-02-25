@@ -1,6 +1,6 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 10% 30% 20% 30% 10%;
+    grid-template-columns: 12% 30% 16% 30% 12%;
   }
 
 #kol1, #kol2, #kol3 {
@@ -14,7 +14,7 @@
 
 .wrapperInside2 {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50% 25% 25%;
   }
 
   #inside2kol1, #inside2kol2{
