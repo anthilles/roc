@@ -15,13 +15,27 @@
 .wrapperInside2 {
     display: grid;
     grid-template-columns: 50% 25% 25%;
-  }
+}
 
-  #inside2kol1, #inside2kol2{
+#wrapperInside22 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;      
+}
+
+#inside2kol1, #inside2kol2{
     width: 100%;
-    margin: 0 0;
+    margin: 10px 0;
 }
 
 #civsEnemy, #civsPlayer {
     width: 100%;
+}
+
+.buffs {
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+margin: 3px auto;
 }

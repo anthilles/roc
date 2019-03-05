@@ -160,7 +160,6 @@ function commandersListFunctionPlayer(){
 
 function commandersListFunctionEnemy(){
     for (var i = 0; i < commandersList.length; i++) {
-        console.log(commandersList[i]);
         g = document.createElement('option');
         g.text = commandersList[i];
         g.value = commandersList[i];    
@@ -191,6 +190,39 @@ function levelsCommanderEnemy(){
         element.appendChild(g)
     }
 }
+
+function buffBonusAtt(){
+    checkBox = document.getElementById("att")
+    checkBox2 = document.getElementById("def")
+    checkBoxInt = parseInt(checkBox.value);
+    checkBoxInt2 = parseInt(checkBox2.value);
+    if (checkBox.checked && checkBox.id == "att"){
+        console.log(checkBoxInt)
+        checkBox2.checked = false;
+    }else if(checkBox2.checked && checkBox2.id == "def"){
+        console.log(checkBoxInt2)
+        checkBox.checked = false;
+    }else{
+        console.log(0)
+    }
+}
+
+function buffBonusCap() {
+    checkBox = document.getElementById("cap25")
+    checkBox2 = document.getElementById("cap50")
+    checkBoxInt = parseInt(checkBox.value);
+    checkBoxInt2 = parseInt(checkBox2.value);
+    if (checkBox.checked && checkBox.id == "cap25"){
+        console.log(checkBoxInt)
+        checkBox2.checked = false;
+    }else if(checkBox2.checked && checkBox2.id == "cap50"){
+        console.log(checkBoxInt2)
+        checkBox.checked = false;
+    }else{
+        console.log(0)
+    }
+}
+
 
 function displayCommandersPlayer(){
     console.log("dummy");
@@ -395,6 +427,7 @@ function resultInfantry(){
 
 
 // TODO //
+// Dodać buff od itemków
 // Dodać grafikę win/lost
 // % zabitych % ciężko rannych % lekko rannych
 // dodać dowódców i statystyki
