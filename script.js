@@ -82,6 +82,7 @@ var siegeEnemy;
 var archersEnemy;
 var archersPlayer;
 
+
 function displayCivEnemy(){
     var e = document.getElementById("civsEnemy");
     var value = e.options[e.selectedIndex].value; 
@@ -147,7 +148,7 @@ function displayCivEnemy(){
 }
 
 function commandersListFunctionPlayer(){
-    for (var i = 0; i < commandersList.length; i++) {
+    for (let i = 0; i < commandersList.length; i++) {
         console.log(commandersList[i]);
         g = document.createElement('option');
         g.text = commandersList[i];
@@ -159,7 +160,7 @@ function commandersListFunctionPlayer(){
 }
 
 function commandersListFunctionEnemy(){
-    for (var i = 0; i < commandersList.length; i++) {
+    for (let i = 0; i < commandersList.length; i++) {
         g = document.createElement('option');
         g.text = commandersList[i];
         g.value = commandersList[i];    
@@ -176,8 +177,10 @@ function levelsCommanderPlayer(){
         g.value = i;
     
         element = document.getElementById("levelsCommanderPlayer");
-        element.appendChild(g)
+        element.appendChild(g) 
+        this.takeLvlPlayer()            
     }
+    
 }
 
 function levelsCommanderEnemy(){
@@ -190,6 +193,57 @@ function levelsCommanderEnemy(){
         element.appendChild(g)
     }
 }
+
+//funkcja wylicza power bohatera z poziomu który posiada
+
+function takeLvlPlayer(){
+        var sel = document.getElementById("levelsCommanderPlayer");
+        var value = sel.options[sel.selectedIndex].value;
+        value = parseInt(value)
+
+        if(value>0&&value<=10){
+            let wynik = (value*100);
+            console.log(wynik)
+        }else if(value>10&&value<=20){
+            let wynik1 = (10*100); // 1-10  1000
+            let wynik2 = (value-10)*150; //11-20   1100
+            let result = wynik1 + wynik2;
+            console.log(result)
+        }else if(value>20&&value<=30){
+            let wynik1 = (10*100); // 1-10  1000
+            let wynik2 = (10*150); //11-20  1500
+            let wynik3 = (value-20)*200;
+            let result = wynik3 + wynik1 + wynik2;
+            console.log(result)
+        }else if(value>30&&value<=40){
+            let wynik1 = (10*100); // 1-10  1000
+            let wynik2 = (10*150); //11-20  1500
+            let wynik3 = (10*200); //21-30  2000
+            let wynik4 = (value-30)*300;
+            let result = wynik1 + wynik2 + wynik3 + wynik4
+            console.log(result)
+        }else if(value>40&&value<=50){
+            let wynik1 = (10*100); // 1-10  1000
+            let wynik2 = (10*150); //11-20  1500
+            let wynik3 = (10*200); //21-30  2000
+            let wynik4 = (10*300); //31-40  3000
+            let wynik5 = (value-40)*500;
+            let result = wynik1 + wynik2 + wynik3 + wynik4 + wynik5
+            console.log(result)
+        }else{ 
+            let wynik1 = (10*100); // 1-10  1000
+            let wynik2 = (10*150); //11-20  1500
+            let wynik3 = (10*200); //21-30  2000
+            let wynik4 = (10*300); //31-40  3000
+            let wynik5 = (10*500); //41-50  3000
+            let wynik6 = (value-50)*600;
+            let result = wynik1 + wynik2 + wynik3 + wynik4 + wynik5 + wynik6
+            console.log(result)
+        }
+}
+
+
+
 
 function buffBonusAtt(){
     checkBox = document.getElementById("att")
@@ -231,6 +285,14 @@ function displayCommandersPlayer(){
 function displayCommandersEnemy(){
     console.log("dummy");
 }
+
+
+
+
+
+
+
+
 
 // border stats Player 
 
@@ -413,10 +475,12 @@ function resultInfantry(){
     let Player = (infantryPlayer+cavalryPlayer+archersPlayer+siegePlayer);
     let Enemy = (infantryEnemy+cavalryEnemy+archersEnemy+siegeEnemy)
     let Result = Player - Enemy
+
     if(Result>0){
         var div = document.getElementById("battleResultEnd");
         div.innerHTML += "Victory"
         console.log("Zwycięstwo")
+        
     }else{
         console.log("Porażka")
         var div = document.getElementById("battleResultEnd");
@@ -426,7 +490,9 @@ function resultInfantry(){
 }
 
 
+console.log(CaoCao)
 // TODO //
+// refaktoryzacja zliczania mocy z poziomów
 // Dodać buff od itemków
 // Dodać grafikę win/lost
 // % zabitych % ciężko rannych % lekko rannych
