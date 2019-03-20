@@ -174,49 +174,49 @@ function levelsCommanderEnemy(){
 //funkcja wylicza power bohatera z poziomu który posiada
 
 function takeLvlPlayer(){
-        var sel = document.getElementById("levelsCommanderPlayer");
-        var value = sel.options[sel.selectedIndex].value;
-        value = parseInt(value)
+    var sel = document.getElementById("levelsCommanderPlayer");
+    var value = sel.options[sel.selectedIndex].value;
+    value = parseInt(value)
+    let result1 = (10*100); // 1-10  1000
+    let result2 = (10*150); //11-20  1500
+    let result3 = (10*200); //21-30  2000
+    let result4 = (10*300); //31-40  3000
+    let result5 = (10*500); //41-50  3000
 
-        if(value>0&&value<=10){
-            let wynik = (value*100);
-            console.log(wynik)
-        }else if(value>10&&value<=20){
-            let wynik1 = (10*100); // 1-10  1000
-            let wynik2 = (value-10)*150; //11-20   1100
-            let result = wynik1 + wynik2;
-            console.log(result)
-        }else if(value>20&&value<=30){
-            let wynik1 = (10*100); // 1-10  1000
-            let wynik2 = (10*150); //11-20  1500
-            let wynik3 = (value-20)*200;
-            let result = wynik3 + wynik1 + wynik2;
-            console.log(result)
-        }else if(value>30&&value<=40){
-            let wynik1 = (10*100); // 1-10  1000
-            let wynik2 = (10*150); //11-20  1500
-            let wynik3 = (10*200); //21-30  2000
-            let wynik4 = (value-30)*300;
-            let result = wynik1 + wynik2 + wynik3 + wynik4
-            console.log(result)
-        }else if(value>40&&value<=50){
-            let wynik1 = (10*100); // 1-10  1000
-            let wynik2 = (10*150); //11-20  1500
-            let wynik3 = (10*200); //21-30  2000
-            let wynik4 = (10*300); //31-40  3000
-            let wynik5 = (value-40)*500;
-            let result = wynik1 + wynik2 + wynik3 + wynik4 + wynik5
-            console.log(result)
-        }else{ 
-            let wynik1 = (10*100); // 1-10  1000
-            let wynik2 = (10*150); //11-20  1500
-            let wynik3 = (10*200); //21-30  2000
-            let wynik4 = (10*300); //31-40  3000
-            let wynik5 = (10*500); //41-50  3000
-            let wynik6 = (value-50)*600;
-            let result = wynik1 + wynik2 + wynik3 + wynik4 + wynik5 + wynik6
-            console.log(result)
-        }
+    if(value>0&&value<=10){
+        let temp1 = (value*100);
+        let result = temp1;
+        this.addTalentPower(result,value);
+    }else if(value>10&&value<=20){
+        let temp2 = (value-10)*150; //11-20   1100
+        let result = result1 + temp2;
+        this.addTalentPower(result,value);
+    }else if(value>20&&value<=30){
+        let temp3 = (value-20)*200;
+        let result = result1 + result2 + temp3;
+        this.addTalentPower(result,value);
+    }else if(value>30&&value<=40){
+        let temp4 = (value-30)*300;
+        let result = result1 + result2 + result3 + temp4
+        this.addTalentPower(result,value);
+    }else if(value>40&&value<=50){
+        let temp5 = (value-40)*500;
+        let result = result1 + result2 + result3 + result4 + temp5
+        this.addTalentPower(result,value);
+    }else{
+        let temp6 = (value-50)*600;
+        let result = result1 + result2 + result3 + result4 + result5 + temp6
+        this.addTalentPower(result,value);
+    }
+}
+
+// Zliczanie talentów po poziomie bohatera
+// TODO - bohater ma więcej niż poziom, sprawdzić czemu.
+
+function addTalentPower(result, value){
+    let totalTalentPower = value*300;
+    let lvlAndTalentPower = totalTalentPower+result;
+    console.log(`poziom: ${value}, lvl power: ${result}, total power: ${lvlAndTalentPower}`)
 }
 
 
