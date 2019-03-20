@@ -88,8 +88,19 @@
                                         <option value='1' selected="selected">1</option>
                                     </select>
                             </div>
-                        </div>                 
+                        </div>   
+            
                 </div>
+                <p>Player commander skills level:</p>
+                <div class="wrapperInside55">
+                        <input type="number" name="playerSkill1" id="playerSkill1" class="skillinput" min="1" max="5" placeholder="1 skill">
+                        <input type="number" name="playerSkill2" id="playerSkill2" class="skillinput" min="0" max="5" placeholder="2 skill">
+                        <input type="number" name="playerSkill3" id="playerSkill3" class="skillinput" min="0" max="5" placeholder="3 skill">
+                        <input type="number" name="playerSkill4" id="playerSkill4" class="skillinput" min="0" max="5" placeholder="4 skill">
+                        <input type="number" name="playerSkill5" id="playerSkill5" class="skillinput" min="0" max="1" placeholder="5 skill">
+                </div>
+                    
+         
                 
             <div class="troops">
                 <p>TROOPS</p>
@@ -119,11 +130,9 @@
                 T5:<input type="number" id="siegePlayert5" placeholder="siege t4" name="siegePlayert4" value="0"></br>
             </div>
             <div class="buffs"> 
-                <p>Buffs from items</p>
+                <p>Player buffs from items</p>
             
-            <div id="wrapperInside22">
-                    
-                
+            <div id="wrapperInside22">   
                 <div>
                     <p>att 5%</p>
                     <input type="checkbox" value="5" id="att" class="cb" onclick="buffBonusAtt()">
@@ -209,7 +218,14 @@
                     </div>
                 </div>
             </div>
-                
+            <p>Enemy commander skills level:</p>
+            <div class="wrapperInside55">
+                    <input type="number" name="enemySkill1" id="enemySkill1" class="skillinput" min="1" max="5" placeholder="1 skill">
+                    <input type="number" name="enemySkill2" id="enemySkill2" class="skillinput" min="0" max="5" placeholder="2 skill">
+                    <input type="number" name="enemySkill3" id="enemySkill3" class="skillinput" min="0" max="5" placeholder="3 skill">
+                    <input type="number" name="enemySkill4" id="enemySkill4" class="skillinput" min="0" max="5" placeholder="4 skill">
+                    <input type="number" name="enemySkill5" id="enemySkill5" class="skillinput" min="0" max="1" placeholder="5 skill">
+            </div>    
                 
                 <div class="troops">
                     <p>TROOPS</p>
@@ -238,6 +254,28 @@
                     T4: <input type="number" id="siegeEnemyt4" placeholder="siege t3" name="siegeEnemyt4" value="0"></br>
                     T5: <input type="number" id="siegeEnemyt5" placeholder="siege t4" name="siegeEnemyt5" value="0"></br>
                 </div>
+                <div class="buffs"> 
+                    <p>Enemy buffs from items</p>
+                
+                <div id="wrapperInside22">   
+                    <div>
+                        <p>att 5%</p>
+                        <input type="checkbox" value="5" id="att" class="cb" onclick="buffBonusAtt()">
+                    </div>
+                    <div>
+                        <p>def 5%</p>
+                        <input type="checkbox" value="5"  id="def" class="cb" onclick="buffBonusAtt()">
+                    </div>
+                    <div>
+                        <p>cap 25%</p>
+                        <input type="checkbox" value="25"  id="cap25" class="de" onclick="buffBonusCap()">
+                    </div>
+                    <div>
+                        <p>cap 50%</p>
+                        <input type="checkbox" value="50"  id="cap50" class="de" onclick="buffBonusCap()">
+                    </div>
+                </div>
+                </div>
             </div>
         <div class="empty">
             <p>infantry</p>
@@ -265,9 +303,11 @@
             <div id="siegeEnemyt4Stats"></div> 
             <div id="siegeEnemyt5Stats"></div>        
         </div> 
+        
     </div>
     <script src="data/civs.js"></script>
     <script src="data/commanders.js"></script>
+    <script src="data/power.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -22,9 +22,25 @@
     grid-template-columns: 25% 25% 25% 25%;      
 }
 
+.wrapperInside55 {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    margin: 10px 0;      
+}
+
 #inside2kol1, #inside2kol2{
     width: 100%;
     margin: 10px 0;
+}
+
+#numbers {
+    width: 100%;
+    margin: 0;    
+}
+
+#skillinput {
+    padding: 0;
+    margin: 0;
 }
 
 #civsEnemy, #civsPlayer {

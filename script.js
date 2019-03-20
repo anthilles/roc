@@ -14,60 +14,49 @@ function displayCivPLayer(){
         case "Arabia":
             civ = Arabia;
             statsDisplayPlayer(civ)
-            console.log("Arabia")
             break;
         case "Britain":
             civ = Britain;
             statsDisplayPlayer(civ);
-            console.log("Britain")
             break;
         case "Byzantium":
             civ = Byzantium;
             statsDisplayPlayer(civ);
-            console.log("Byzantium")
             break;
         case "China":
             civ = China;
             statsDisplayPlayer(civ);
-            console.log("China")
             break;
         case "France":
             civ = France;
             statsDisplayPlayer(civ);
-            console.log("France")
             break;
         case "Germany":
             civ = Germany;
             statsDisplayPlayer(civ);
-            console.log("Germany")
             break;
         case "Japan":
             civ = Japan;
             statsDisplayPlayer(civ);
-            console.log("Japan")
             break;
         case "Korea":
             civ = Korea;
             statsDisplayPlayer(civ);
-            console.log("Korea")
             break;
         case "Ottoman":
             civ = Ottoman;
             statsDisplayPlayer(civ);
-            console.log("Ottoman")
             break;
         case "Rome":
             civ = Rome;
             statsDisplayPlayer(civ);
-            console.log("Rome")
             break;
         case "Spain":
             civ = Spain;
             statsDisplayPlayer(civ);
-            console.log("Spain")
             break;
         default:
-            console.log("brak")
+            break;
       }
 }
 
@@ -90,66 +79,54 @@ function displayCivEnemy(){
         case "Arabia":
             civ2 = Arabia;
             statsDisplayEnemy(civ2);
-            console.log("Arabia")
             break;
         case "Britain":
             civ2 = Britain;
             statsDisplayEnemy(civ2);
-            console.log("Britain")
             break;
         case "Byzantium":
             civ2 = Byzantium;
             statsDisplayEnemy(civ2);
-            console.log("Byzantium")
             break;
         case "China":
             civ2 = China;
             statsDisplayEnemy(civ2);
-            console.log("China")
             break;
         case "France":
             civ2 = France;
             statsDisplayEnemy(civ2);
-            console.log("France")
             break;
         case "Germany":
             civ2 = Germany;
             statsDisplayEnemy(civ2);
-            console.log("Germany")
             break;
         case "Japan":
             civ2 = Japan;
             statsDisplayEnemy(civ2);
-            console.log("Japan")
             break;
         case "Korea":
             civ2 = Korea;
             statsDisplayEnemy(civ2);
-            console.log("Korea")
             break;
         case "Ottoman":
             civ2 = Ottoman;
             statsDisplayEnemy(civ2);
-            console.log("Ottoman")
             break;
         case "Rome":
             civ2 = Rome;
             statsDisplayEnemy(civ2);
-            console.log("Rome")
             break;
         case "Spain":
             civ2 = Spain;
             statsDisplayEnemy(civ2);
-            console.log("Spain")
             break;
         default:
-            console.log("brak")
+            break;
       }
 }
 
 function commandersListFunctionPlayer(){
     for (let i = 0; i < commandersList.length; i++) {
-        console.log(commandersList[i]);
         g = document.createElement('option');
         g.text = commandersList[i];
         g.value = commandersList[i];    
@@ -245,6 +222,7 @@ function takeLvlPlayer(){
 
 
 
+
 function buffBonusAtt(){
     checkBox = document.getElementById("att")
     checkBox2 = document.getElementById("def")
@@ -277,22 +255,47 @@ function buffBonusCap() {
     }
 }
 
+// get choosen commander and match with power
+// TODO - po pobraniu mocy bazowej - pobrać skille (może po 
+// naciśnięciu "count" i pomnożenie zgodnie z info z power)
 
 function displayCommandersPlayer(){
-    console.log("dummy");
+        var sel = document.getElementById("commandersPlayer");
+        var value = sel.options[sel.selectedIndex].value;
+
+        var obj = eval('({' + value + '})');
+        obj = Object.values(obj);
+        obj = obj[0];
+        obj = obj.powerBased;
+
+        switch(true) {
+            case (obj === gold800.powerBased):
+                console.log('850');
+                break;
+            case (obj === gold950.powerBased):
+                console.log('950');
+                break;
+            case (obj === gold1000.powerBased):
+                console.log('1000');
+                break;
+            case (obj === gold1100.powerBased):
+                console.log('1100');
+                break;
+            case (obj === gold1200.powerBased):
+                console.log('1200');
+                break;
+            case (obj === purple600.powerBased):
+                console.log('600');
+                break;
+            case (obj === purple500.powerBased):
+                console.log('500');
+                break;
+            }
 }
 
 function displayCommandersEnemy(){
     console.log("dummy");
 }
-
-
-
-
-
-
-
-
 
 // border stats Player 
 
@@ -489,8 +492,6 @@ function resultInfantry(){
     console.log(Result)
 }
 
-
-console.log(CaoCao)
 // TODO //
 // refaktoryzacja zliczania mocy z poziomów
 // Dodać buff od itemków
