@@ -255,9 +255,24 @@ function buffBonusCap() {
     }
 }
 
+// dTake skills from input fields
+function takeSkillsFromPage(obj){
+    var playerSkill1 = document.getElementById("playerSkill1").value;
+    var playerSkill2 = document.getElementById("playerSkill2").value;
+    var playerSkill3 = document.getElementById("playerSkill3").value;
+    var playerSkill4 = document.getElementById("playerSkill4").value;
+    var playerSkill5 = document.getElementById("playerSkill5").value;
+
+    this.countSkillsCommander(obj, playerSkill1, playerSkill2, playerSkill3, playerSkill4, playerSkill5);
+}
+
+// TODO funkcja do porównania basepower z commanders i power
+function countSkillsCommander(obj, playerSkill1, playerSkill2, playerSkill3, playerSkill4, playerSkill5){
+    console.log(obj);
+    console.log(playerSkill1);
+}
+
 // get choosen commander and match with power
-// TODO - po pobraniu mocy bazowej - pobrać skille (może po 
-// naciśnięciu "count" i pomnożenie zgodnie z info z power)
 
 function displayCommandersPlayer(){
         var sel = document.getElementById("commandersPlayer");
@@ -266,31 +281,25 @@ function displayCommandersPlayer(){
         var obj = eval('({' + value + '})');
         obj = Object.values(obj);
         obj = obj[0];
-        obj = obj.powerBased;
+        var obj2 = obj.powerBased;
 
         switch(true) {
-            case (obj === gold800.powerBased):
-                console.log('850');
+            case (obj2 === gold800.powerBased):
                 break;
-            case (obj === gold950.powerBased):
-                console.log('950');
+            case (obj2 === gold950.powerBased):
                 break;
-            case (obj === gold1000.powerBased):
-                console.log('1000');
+            case (obj2 === gold1000.powerBased):
                 break;
-            case (obj === gold1100.powerBased):
-                console.log('1100');
+            case (obj2 === gold1100.powerBased):
                 break;
-            case (obj === gold1200.powerBased):
-                console.log('1200');
+            case (obj2 === gold1200.powerBased):
                 break;
-            case (obj === purple600.powerBased):
-                console.log('600');
+            case (obj2 === purple600.powerBased):
                 break;
-            case (obj === purple500.powerBased):
-                console.log('500');
+            case (obj2 === purple500.powerBased):
                 break;
             }
+            this.takeSkillsFromPage(obj);
 }
 
 function displayCommandersEnemy(){
