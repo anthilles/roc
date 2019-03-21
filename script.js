@@ -3,6 +3,7 @@ levelsCommanderPlayer();
 levelsCommanderEnemy();
 commandersListFunctionPlayer();
 commandersListFunctionEnemy();
+displayCommandersPlayer();
 
 // Civ selection check - PLAYER //
 var civ;
@@ -155,11 +156,11 @@ function levelsCommanderPlayer(){
     
         element = document.getElementById("levelsCommanderPlayer");
         element.appendChild(g) 
-        this.takeLvlPlayer()            
     }
-    
+    this.takeLvlPlayer()  
 }
 
+// TODO
 function levelsCommanderEnemy(){
     for (var i = 1; i <= 60; i++) {
         g = document.createElement('option');
@@ -169,6 +170,7 @@ function levelsCommanderEnemy(){
         element = document.getElementById("levelsCommanderEnemy");
         element.appendChild(g)
     }
+    // this.takeLvlEnemy()  
 }
 
 //funkcja wylicza power bohatera z poziomu który posiada
@@ -213,16 +215,103 @@ function takeLvlPlayer(){
 // Zliczanie talentów po poziomie bohatera
 // TODO - bohater ma więcej niż poziom, sprawdzić czemu.
 
-function addTalentPower(result, value){
+function addTalentPower(result, value){ 
     let totalTalentPower = value*300;
-    let lvlAndTalentPower = totalTalentPower+result;
-    console.log(`poziom: ${value}, lvl power: ${result}, total power: ${lvlAndTalentPower}`)
+    this.talentAndLevelPowerCommander(result,totalTalentPower);
 }
 
+// get choosen commander and match with power
+function displayCommandersPlayer(){
+        var sel = document.getElementById("commandersPlayer");
+        var value = sel.options[sel.selectedIndex].value;
 
+        var obj = eval('({' + value + '})');
+        obj = Object.values(obj);
+        obj = obj[0];
+        var obj2 = obj.powerBased;
 
+        switch(true) {
+            case (obj2 === gold800.powerBased):
+                break;
+            case (obj2 === gold950.powerBased):
+                break;
+            case (obj2 === gold1000.powerBased):
+                break;
+            case (obj2 === gold1100.powerBased):
+                break;
+            case (obj2 === gold1200.powerBased):
+                break;
+            case (obj2 === purple600.powerBased):
+                break;
+            case (obj2 === purple500.powerBased):
+                break;
+            }
+        this.takeSkillsFromPage(obj,obj2);
+}
 
+// dTake skills from input fields
+function takeSkillsFromPage(obj2){
+    var playerSkill1 = document.getElementById("playerSkill1").value;
+    var playerSkill2 = document.getElementById("playerSkill2").value;
+    var playerSkill3 = document.getElementById("playerSkill3").value;
+    var playerSkill4 = document.getElementById("playerSkill4").value;
+    var playerSkill5 = document.getElementById("playerSkill5").value;
 
+    this.countSkillsCommander(obj2, playerSkill1, playerSkill2, playerSkill3, playerSkill4, playerSkill5);
+}
+
+// counting power with input values
+function countSkillsCommander(obj2, playerSkill1, playerSkill2, playerSkill3, playerSkill4, playerSkill5){
+    if(obj2.powerBased === 800){
+        let power = parseInt((playerSkill1*gold800.skill1)+(playerSkill2*gold800.skill2)+(playerSkill3*gold800.skill3)+(playerSkill4*gold800.skill4)+(playerSkill5*gold800.skill5));
+        this.skillsPowerCommander(power);
+    }else if(obj2.powerBased === 950){
+        let power = parseInt((playerSkill1*gold950.skill1)+(playerSkill2*gold950.skill2)+(playerSkill3*gold950.skill3)+(playerSkill4*gold950.skill4)+(playerSkill5*gold950.skill5));
+        this.skillsPowerCommander(power);
+    }else if(obj2.powerBased === 1000){
+        let power = parseInt((playerSkill1*gold1000.skill1)+(playerSkill2*gold1000.skill2)+(playerSkill3*gold1000.skill3)+(playerSkill4*gold1000.skill4)+(playerSkill5*gold1000.skill5));
+        this.skillsPowerCommander(power);
+    }else if(obj2.powerBased === 1100){
+        let power = parseInt((playerSkill1*gold1100.skill1)+(playerSkill2*gold1100.skill2)+(playerSkill3*gold1100.skill3)+(playerSkill4*gold1100.skill4)+(playerSkill5*gold1100.skill5));
+        this.skillsPowerCommander(power);
+    }else if(obj2.powerBased === 1200){
+        let power = parseInt((playerSkill1*gold1200.skill1)+(playerSkill2*gold1200.skill2)+(playerSkill3*gold1200.skill3)+(playerSkill4*gold1200.skill4)+(playerSkill5*gold1200.skill5));
+        this.skillsPowerCommander(power);
+    }else if(obj2.powerBased === 600){
+        let power = parseInt((playerSkill1*purple600.skill1)+(playerSkill2*purple600.skill2)+(playerSkill3*purple600.skill3)+(playerSkill4*purple600.skill4)+(playerSkill5*purple600.skill5));
+        this.skillsPowerCommander(power);
+    }else if(obj2.powerBased === 500){
+        let power = parseInt((playerSkill1*purple500.skill1)+(playerSkill2*purple500.skill2)+(playerSkill3*purple500.skill3)+(playerSkill4*purple500.skill4)+(playerSkill5*purple500.skill5));
+        this.skillsPowerCommander(power);
+    }else{
+        console.log("nieznany")  
+    }
+}
+
+//TODO
+function displayCommandersEnemy(){
+    console.log("dummy");
+}
+
+// TOTAL POWER - TODO zrobić tak aby wszystkie statystyki zliczały się jednocześnie.
+function skillsPowerCommander(power){
+    // console.log(`skills power: ${power}`);
+    this.dummy(power);
+}
+
+function talentAndLevelPowerCommander(result,totalTalentPower){
+    // console.log(`lvls power: ${result}`);
+    // console.log(`talents power: ${totalTalentPower}`);
+    this.dummy(result, totalTalentPower);
+}
+
+function dummy(power,result,totalTalentPower){
+    console.log(power);
+    console.log(result);
+    console.log(totalTalentPower);
+}
+
+// BUFFS BONUS
 function buffBonusAtt(){
     checkBox = document.getElementById("att")
     checkBox2 = document.getElementById("def")
@@ -253,57 +342,6 @@ function buffBonusCap() {
     }else{
         console.log(0)
     }
-}
-
-// dTake skills from input fields
-function takeSkillsFromPage(obj){
-    var playerSkill1 = document.getElementById("playerSkill1").value;
-    var playerSkill2 = document.getElementById("playerSkill2").value;
-    var playerSkill3 = document.getElementById("playerSkill3").value;
-    var playerSkill4 = document.getElementById("playerSkill4").value;
-    var playerSkill5 = document.getElementById("playerSkill5").value;
-
-    this.countSkillsCommander(obj, playerSkill1, playerSkill2, playerSkill3, playerSkill4, playerSkill5);
-}
-
-// TODO funkcja do porównania basepower z commanders i power
-function countSkillsCommander(obj, playerSkill1, playerSkill2, playerSkill3, playerSkill4, playerSkill5){
-    console.log(obj);
-    console.log(playerSkill1);
-}
-
-// get choosen commander and match with power
-
-function displayCommandersPlayer(){
-        var sel = document.getElementById("commandersPlayer");
-        var value = sel.options[sel.selectedIndex].value;
-
-        var obj = eval('({' + value + '})');
-        obj = Object.values(obj);
-        obj = obj[0];
-        var obj2 = obj.powerBased;
-
-        switch(true) {
-            case (obj2 === gold800.powerBased):
-                break;
-            case (obj2 === gold950.powerBased):
-                break;
-            case (obj2 === gold1000.powerBased):
-                break;
-            case (obj2 === gold1100.powerBased):
-                break;
-            case (obj2 === gold1200.powerBased):
-                break;
-            case (obj2 === purple600.powerBased):
-                break;
-            case (obj2 === purple500.powerBased):
-                break;
-            }
-            this.takeSkillsFromPage(obj);
-}
-
-function displayCommandersEnemy(){
-    console.log("dummy");
 }
 
 // border stats Player 

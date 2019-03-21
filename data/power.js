@@ -10,13 +10,13 @@ class power {
     }
 }
 
-const gold800 = new commanders(4,800,2400,2000,2000,3000,0);
-const gold950 = new commanders(4,950,2800,3000,3000,2800,0);
-const gold1000 = new commanders(4,1000,3000,2800,2800,3400,0);
-const gold1100 = new commanders(4,1100,3200,3000,3000,3600,2500);
-const gold1200 = new commanders(4,1200,3400,3200,3200,3600,0);
-const purple600 = new commanders(3,600,1800,1600,1600,2000,2500);
-const purple500 = new commanders(3,500,0,0,0,0,0);
+const gold800 = new power(4,800,2400,2000,2000,3000,0);
+const gold950 = new power(4,950,2800,3000,3000,2800,0);
+const gold1000 = new power(4,1000,3000,2800,2800,3400,0);
+const gold1100 = new power(4,1100,3200,3000,3000,3600,2500);
+const gold1200 = new power(4,1200,3400,3200,3200,3600,0);
+const purple600 = new power(3,600,1800,1600,1600,2000,2500);
+const purple500 = new power(3,500,0,0,0,0,0);
 
 // 51-60
 // 600
