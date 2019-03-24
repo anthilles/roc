@@ -45,6 +45,7 @@ const CityKeeper = new commanders("City Keeper",700,1);
 const DragonLancer = new commanders("Dragon Lancer",700,1);
 
 commandersList = [
+    "Choose",
     "Baibars",
     "Balisarius",
     "Boudica",

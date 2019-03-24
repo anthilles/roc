@@ -77,3 +77,25 @@ margin: 3px auto;
     width: 100%;
     height: 50px;
   }
+
+  .wrapperInside1{
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 10px 0;      
+  }
+
+  .troopCapacity{
+      width: 100%;
+  }
+
+  .commanderStatsDisplay{
+    display: block;
+    border: 1px black solid;
+    background-color: rgb(204, 204, 204);
+    padding: 5px;
+    margin-top: 80%;
+  }
+
+  .commanderStatsDisplay{
+      text-decoration: black;
+  }

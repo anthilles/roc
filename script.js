@@ -221,8 +221,11 @@ function takeLvlPlayer(){
 function addTalentPower(result, value){
     var takeStars = document.getElementById("starsPlayer");
     var starsValue = parseInt(takeStars.options[takeStars.selectedIndex].value);
-    console.log("liczba gwiazd: " + starsValue);
-    if(starsValue>=5){
+    // console.log("liczba gwiazd: " + starsValue);
+    if(starsValue == 6){
+        let totalTalentPower = ((value-1)+15)*300;
+        this.talentAndLevelPowerCommander(result,totalTalentPower);       
+    }else if(starsValue >= 5 && starsValue < 6){
         let totalTalentPower = ((value-1)+5)*300;
         this.talentAndLevelPowerCommander(result,totalTalentPower);
     }else{
@@ -235,11 +238,15 @@ function addTalentPower(result, value){
 function displayCommandersPlayer(){
         var sel = document.getElementById("commandersPlayer");
         var value = sel.options[sel.selectedIndex].value;
+        document.getElementById("commanderNameHtml").innerHTML = `Name: ${value}`;
+        
 
         var obj = eval('({' + value + '})');
         obj = Object.values(obj);
         obj = obj[0];
         var obj2 = obj.powerBased;
+        document.getElementById("commanderBaseLvlPowerHtml").innerHTML = `Base power: ${obj2}`;
+        
 
         switch(true) {
             case (obj2 === gold800.powerBased):
@@ -305,13 +312,41 @@ function displayCommandersEnemy(){
 }
 
 // TOTAL POWER - TODO zrobić tak aby wszystkie statystyki zliczały się jednocześnie.
-function skillsPowerCommander(power){
-    console.log(`skills power: ${power}`);
+function skillsPowerCommander(power){  
+    document.getElementById("commanderskillPowerHtml").innerHTML = `${power}`;
 }
 
 function talentAndLevelPowerCommander(result,totalTalentPower){
-    console.log(`lvls power: ${result}`);
-    console.log(`talents power: ${totalTalentPower}`);
+    document.getElementById("commanderLvlPowerHtml").innerHTML = `${result}`;
+    document.getElementById("commanderTalentPowerHtml").innerHTML = `${totalTalentPower}`;
+}
+
+function totalCount(){
+    this.levelsCommanderPlayer()
+    this.displayCivPLayer()
+    this.displayCommandersPlayer()
+
+    
+
+    //commander lvl display
+    var sel = document.getElementById("levelsCommanderPlayer");
+    var value = sel.options[sel.selectedIndex].value;
+    document.getElementById("commanderLvlHtml").innerHTML = "level: " + value;
+
+    // commander stars display
+    var takeStars = document.getElementById("starsPlayer");
+    var starsValue = parseInt(takeStars.options[takeStars.selectedIndex].value);
+    document.getElementById("commanderStarLvlHtml").innerHTML = "stars: " + starsValue;
+
+    // troops capacity
+    var troopsCaps = document.getElementById("playerTroopCapacity").value;
+    document.getElementById("troopCapacityHtml").innerHTML = "Troops capacity: " + troopsCaps;
+
+    //commander total power
+    var takeLvlPower = parseInt(document.getElementById("commanderLvlPowerHtml").innerText);
+    var takeSkillPower = parseInt(document.getElementById("commanderskillPowerHtml").innerText);
+    var takeTalentPower = parseInt(document.getElementById("commanderTalentPowerHtml").innerText);
+    var totalPowerCommanderPlayer = takeLvlPower + takeSkillPower + takeTalentPower;
 }
 
 // BUFFS BONUS
@@ -348,6 +383,10 @@ function buffBonusCap() {
 }
 
 // border stats Player 
+
+function commanderStatsDisplayInner(){
+    document.getElementById("commanderStatsDisplay").innerHTML = "test" 
+}
 
 function statsDisplayPlayer(civ){
     document.getElementById("infantryPlayert1Stats").innerHTML ="T1: att: "+civ.infantry.t1.att + "def: "+civ.infantry.t1.def + "hp: "+civ.infantry.t1.hp;
@@ -543,14 +582,17 @@ function resultInfantry(){
 }
 
 // TODO //
-// Zliczanie wszystkich statystyk w jednym momencie;
+
+// Pobieranie wprowadzonego troop capacity i zliczanie czy nie dał user zbyt dużo
 // refaktoryzacja zliczania mocy z poziomów
 // Dodać buff od itemków
 // Dodać grafikę win/lost
 // % zabitych % ciężko rannych % lekko rannych
-// dodać dowódców i statystyki
 // dodać badania ??
+// Wyrównać Player z Enemy
 
 // DONE //
 // DONE - Dodać buff cywilizacyjny
 // DONE - Dodać T4
+// DONE - Zliczanie wszystkich statystyk w jednym momencie;
+// DONE - dodać dowódców i statystyki

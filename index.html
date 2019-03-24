@@ -35,6 +35,19 @@
             <div id="siegePlayert3Stats"></div>
             <div id="siegePlayert4Stats"></div>
             <div id="siegePlayert5Stats"></div>
+        
+            <div class="commanderStatsDisplay">
+                <p>COMMANDER STATS</p>
+                <div id="commanderNameHtml"></div>
+                    <div id="commanderLvlHtml"></div>
+                    <div id="commanderStarLvlHtml"></div>
+                    <div id="commanderBaseLvlPowerHtml"></div>
+                    <p>Level power: <div id="commanderLvlPowerHtml"></div></p>
+                    <p>Skill power: <div id="commanderskillPowerHtml"></div></p>
+                    <p>Talent power: <div id="commanderTalentPowerHtml"></div></p>
+                    <div id="commanderTotalPowerHtml"></div>
+                    <div id="troopCapacityHtml"></div>
+            </div>
         </div> 
 
         <div id="kol1">
@@ -43,8 +56,9 @@
                         <div id="inside2kol1">
                                 <div class="civ">
                                         <p>Choose civ</p>
-                                        <select name="civs" id="civsPlayer" onclick="displayCivPLayer()">
-                                            <option value="Arabia" selected="selected">Arabia</option>
+                                        <select name="civs" id="civsPlayer">
+                                            <option value="Choose" selected="selected">Choose</option>
+                                            <option value="Arabia">Arabia</option>
                                             <option value="Britain">Britain</option>
                                             <option value="Byzantium">Byzantium</option>
                                             <option value="China">China</option>
@@ -64,7 +78,7 @@
                         <div id="inside2kol2">
                             <div class="civ">
                                     <p>Commander</p>
-                                    <select name="commanders" id="commandersPlayer" onclick="displayCommandersPlayer()">
+                                    <select name="commanders" id="commandersPlayer">
                                     </select>
                                 </div>
                         </div>
@@ -84,7 +98,7 @@
                         <div id="inside2kol2">
                             <div class="civ">
                                     <p>Level</p>
-                                    <select name="levelsCommanderPlayer" id="levelsCommanderPlayer" onclick="levelsCommanderPlayer()">
+                                    <select name="levelsCommanderPlayer" id="levelsCommanderPlayer">
                                         <option value='1' selected="selected">1</option>
                                     </select>
                             </div>
@@ -98,6 +112,13 @@
                         <input type="number" name="playerSkill3" id="playerSkill3" class="skillinput" min="0" max="5" placeholder="3 skill">
                         <input type="number" name="playerSkill4" id="playerSkill4" class="skillinput" min="0" max="5" placeholder="4 skill">
                         <input type="number" name="playerSkill5" id="playerSkill5" class="skillinput" min="0" max="1" placeholder="5 skill">
+                </div>
+                <p>Type commander troop capacity:</p>
+                <div class="wrapperInside1">
+                        <input type="number" name="playerTroopCapacity" id="playerTroopCapacity" class="troopCapacity" min="0" placeholder="troop capacity">
+                </div>
+                <div class="wrapperInside1">
+                        <input type="button" name="totalCount" id="totalCount" class="totalCount" min="0" value="Count commander stats" onclick="totalCount()">
                 </div>
                     
          
@@ -176,6 +197,7 @@
                         <div class="civ">
                                 <p>Choose civ</p>
                                 <select name="civs" id="civsEnemy" onclick="displayCivEnemy()">
+                                    <option value="Choose" selected="selected">Choose</option>
                                     <option value="Arabia">Arabia</option>
                                     <option value="Britain">Britain</option>
                                     <option value="Byzantium">Byzantium</option>
