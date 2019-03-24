@@ -183,7 +183,8 @@ function takeLvlPlayer(){
     let result2 = (10*150); //11-20  1500
     let result3 = (10*200); //21-30  2000
     let result4 = (10*300); //31-40  3000
-    let result5 = (10*500); //41-50  3000
+    let result5 = (10*500); //41-50  5000
+    // let result6 = (10*600); //51-60  6000
 
     if(value>0&&value<=10){
         let temp1 = (value*100);
@@ -213,11 +214,21 @@ function takeLvlPlayer(){
 }
 
 // Zliczanie talentów po poziomie bohatera
-// TODO - bohater ma więcej niż poziom, sprawdzić czemu.
+// 4s = 39lvl 38t z,b
+// 40lvl up +1 talent bez dodania gwiazdek
+// po dodaniu gwizdek +5
 
-function addTalentPower(result, value){ 
-    let totalTalentPower = value*300;
-    this.talentAndLevelPowerCommander(result,totalTalentPower);
+function addTalentPower(result, value){
+    var takeStars = document.getElementById("starsPlayer");
+    var starsValue = parseInt(takeStars.options[takeStars.selectedIndex].value);
+    console.log("liczba gwiazd: " + starsValue);
+    if(starsValue>=5){
+        let totalTalentPower = ((value-1)+5)*300;
+        this.talentAndLevelPowerCommander(result,totalTalentPower);
+    }else{
+        let totalTalentPower = (value-1)*300;
+        this.talentAndLevelPowerCommander(result,totalTalentPower);
+    }  
 }
 
 // get choosen commander and match with power
@@ -295,20 +306,12 @@ function displayCommandersEnemy(){
 
 // TOTAL POWER - TODO zrobić tak aby wszystkie statystyki zliczały się jednocześnie.
 function skillsPowerCommander(power){
-    // console.log(`skills power: ${power}`);
-    this.dummy(power);
+    console.log(`skills power: ${power}`);
 }
 
 function talentAndLevelPowerCommander(result,totalTalentPower){
-    // console.log(`lvls power: ${result}`);
-    // console.log(`talents power: ${totalTalentPower}`);
-    this.dummy(result, totalTalentPower);
-}
-
-function dummy(power,result,totalTalentPower){
-    console.log(power);
-    console.log(result);
-    console.log(totalTalentPower);
+    console.log(`lvls power: ${result}`);
+    console.log(`talents power: ${totalTalentPower}`);
 }
 
 // BUFFS BONUS
@@ -540,6 +543,7 @@ function resultInfantry(){
 }
 
 // TODO //
+// Zliczanie wszystkich statystyk w jednym momencie;
 // refaktoryzacja zliczania mocy z poziomów
 // Dodać buff od itemków
 // Dodać grafikę win/lost

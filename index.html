@@ -71,7 +71,7 @@
                         <div id="inside2kol2">
                                 <div class="civ">
                                         <p>Stars level</p>
-                                        <select name="commanders" id="commandersPlayer" onclick="displayStarsPlayer()">
+                                        <select name="commandersStars" id="starsPlayer">
                                             <option value="1" selected="selected">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -132,22 +132,22 @@
             <div class="buffs"> 
                 <p>Player buffs from items</p>
             
-            <div id="wrapperInside22">   
+            <div class="wrapperInside22">   
                 <div>
-                    <p>att 5%</p>
-                    <input type="checkbox" value="5" id="att" class="cb" onclick="buffBonusAtt()">
+                    <label for="attP">att 5%</label>
+                    <input type="checkbox" value="5" id="attP" class="cb" onclick="buffBonusAtt()">
                 </div>
                 <div>
-                    <p>def 5%</p>
-                    <input type="checkbox" value="5"  id="def" class="cb" onclick="buffBonusAtt()">
+                    <label for="defP">def 5%</label>
+                    <input type="checkbox" value="5"  id="defP" class="cb" onclick="buffBonusAtt()">
                 </div>
                 <div>
-                    <p>cap 25%</p>
-                    <input type="checkbox" value="25"  id="cap25" class="de" onclick="buffBonusCap()">
+                    <label for="cap25P">cap 25%</label>
+                    <input type="checkbox" value="25"  id="cap25P" class="de" onclick="buffBonusCap()">
                 </div>
                 <div>
-                    <p>cap 50%</p>
-                    <input type="checkbox" value="50"  id="cap50" class="de" onclick="buffBonusCap()">
+                    <label for="cap50P">cap 50%</label>
+                    <input type="checkbox" value="50"  id="cap50P" class="de" onclick="buffBonusCap()">
                 </div>
             </div>
             </div>
@@ -164,6 +164,9 @@
             <div id="battleResultEnd">
 
             </div>
+
+            <div class="test">foo</div>
+            <div class="test">bar</div>
         </div>
 
         <div id="kol2">
@@ -257,24 +260,24 @@
                 <div class="buffs"> 
                     <p>Enemy buffs from items</p>
                 
-                <div id="wrapperInside22">   
-                    <div>
-                        <p>att 5%</p>
-                        <input type="checkbox" value="5" id="att" class="cb" onclick="buffBonusAtt()">
+                    <div class="wrapperInside22">   
+                        <div>
+                            <label for="attE">att 5%</label>
+                            <input type="checkbox" value="5" id="attE" class="cb" onclick="buffBonusAtt()">
+                        </div>
+                        <div>
+                            <label for="defE">def 5%</label>
+                            <input type="checkbox" value="5"  id="defE" class="cb" onclick="buffBonusAtt()">
+                        </div>
+                        <div>
+                            <label for="cap25E">cap 25%</label>
+                            <input type="checkbox" value="25"  id="cap25E" class="de" onclick="buffBonusCap()">
+                        </div>
+                        <div>
+                            <label for="cap50E">cap 50%</label>
+                            <input type="checkbox" value="50"  id="cap50E" class="de" onclick="buffBonusCap()">
+                        </div>
                     </div>
-                    <div>
-                        <p>def 5%</p>
-                        <input type="checkbox" value="5"  id="def" class="cb" onclick="buffBonusAtt()">
-                    </div>
-                    <div>
-                        <p>cap 25%</p>
-                        <input type="checkbox" value="25"  id="cap25" class="de" onclick="buffBonusCap()">
-                    </div>
-                    <div>
-                        <p>cap 50%</p>
-                        <input type="checkbox" value="50"  id="cap50" class="de" onclick="buffBonusCap()">
-                    </div>
-                </div>
                 </div>
             </div>
         <div class="empty">
