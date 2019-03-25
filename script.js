@@ -5,9 +5,22 @@ commandersListFunctionPlayer();
 commandersListFunctionEnemy();
 displayCommandersPlayer();
 
-// Civ selection check - PLAYER //
+// Civ selection check - Enemy //
+var civ2;
 var civ;
-function displayCivPLayer(){
+var infantryPlayer;
+var infantryEnemy;
+var cavalryEnemy;
+var cavalryPlayer;
+var siegePlayer;
+var siegeEnemy;
+var archersEnemy;
+var archersPlayer;
+
+
+// Civ selection check - PLAYER //
+
+function displayCivPlayer(){
     var e = document.getElementById("civsPlayer");
     var value = e.options[e.selectedIndex].value; 
 
@@ -61,16 +74,6 @@ function displayCivPLayer(){
       }
 }
 
-// Civ selection check - Enemy //
-var civ2;
-var infantryPlayer;
-var infantryEnemy;
-var cavalryEnemy;
-var cavalryPlayer;
-var siegePlayer;
-var siegeEnemy;
-var archersEnemy;
-var archersPlayer;
 
 
 function displayCivEnemy(){
@@ -484,6 +487,8 @@ function statsDisplayEnemy(civ2){
         let siegeEnemyt4number = parseInt(document.getElementById("siegeEnemyt4").value);
         let siegeEnemyt5number = parseInt(document.getElementById("siegeEnemyt5").value);
 
+        totalTroopsNumber = infantryPlayert1number + infantryPlayert2number + infantryPlayert3number + infantryPlayert4number + cavalryPlayert1number + cavalryPlayert2number + cavalryPlayert3number + cavalryPlayert4number + archersPlayert1number + archersPlayert2number + archersPlayert3number + archersPlayert4number + siegePlayert1number + siegePlayert2number + siegePlayert3number + siegePlayert4number
+
         function start(){
             infCount(infantryPlayert1number,infantryPlayert2number,infantryPlayert3number,infantryPlayert4number,infantryEnemyt1number,infantryEnemyt2number,infantryEnemyt3number,infantryEnemyt4number);
             cavCount(cavalryPlayert1number,cavalryPlayert2number,cavalryPlayert3number,cavalryPlayert4number,cavalryEnemyt1number,cavalryEnemyt2number,cavalryEnemyt3number,cavalryEnemyt4number);
@@ -567,18 +572,25 @@ function resultInfantry(){
     let Player = (infantryPlayer+cavalryPlayer+archersPlayer+siegePlayer);
     let Enemy = (infantryEnemy+cavalryEnemy+archersEnemy+siegeEnemy)
     let Result = Player - Enemy
-
-    if(Result>0){
+    let troopMatch = parseInt(document.getElementById("playerTroopCapacity").value);
+    if(totalTroopsNumber > troopMatch){
         var div = document.getElementById("battleResultEnd");
-        div.innerHTML += "Victory"
-        console.log("Zwycięstwo")
-        
+            div.innerHTML += "Too many troops vs commander capacity"
     }else{
-        console.log("Porażka")
-        var div = document.getElementById("battleResultEnd");
-        div.innerHTML += "Lost"
+        if(Result>0){
+            var div = document.getElementById("battleResultEnd");
+            div.innerHTML += "Victory"
+            console.log("Zwycięstwo")
+            
+        }else{
+            console.log("Porażka")
+            var div = document.getElementById("battleResultEnd");
+            div.innerHTML += "Lost"
+        }
+        console.log(Result)
     }
-    console.log(Result)
+
+    
 }
 
 // TODO //

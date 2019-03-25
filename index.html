@@ -56,9 +56,8 @@
                         <div id="inside2kol1">
                                 <div class="civ">
                                         <p>Choose civ</p>
-                                        <select name="civs" id="civsPlayer">
-                                            <option value="Choose" selected="selected">Choose</option>
-                                            <option value="Arabia">Arabia</option>
+                                        <select name="civs" id="civsPlayer" onclick="displayCivPlayer()">
+                                            <option value="Arabia" selected="selected">Arabia</option>
                                             <option value="Britain">Britain</option>
                                             <option value="Byzantium">Byzantium</option>
                                             <option value="China">China</option>
@@ -197,7 +196,6 @@
                         <div class="civ">
                                 <p>Choose civ</p>
                                 <select name="civs" id="civsEnemy" onclick="displayCivEnemy()">
-                                    <option value="Choose" selected="selected">Choose</option>
                                     <option value="Arabia">Arabia</option>
                                     <option value="Britain">Britain</option>
                                     <option value="Byzantium">Byzantium</option>
